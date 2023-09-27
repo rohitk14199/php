@@ -1,15 +1,16 @@
 <?php
 $server = "localhost";
 $username = "root";
-$password= "";
-$dbame = "contact";
+$password= " ";
+$dbname = "contact";
 
-$conection = msqli_connect($server,$username,$password,$dbame);
+$conection = mysqli_connect($server,$username,$password,$dbname);
 
-if(!$conection){
+if(!$conection) {
     echo "not connected";
-} else{
-    echo "connected"
+} 
+else {
+    echo "connected";
 }
 
 
@@ -18,7 +19,7 @@ $lastname = $_POST['lastname'];
 
 $sql = "INSERT INTO `contactus`(`firstname`, `lastname`) VALUES ('$firstname','$lastname')";
 
-$result = msqli_query($conection, $sql);
+$result = mysqli_query($conection, $sql);
 
 if($result)
 {
